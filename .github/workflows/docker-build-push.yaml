@@ -5,23 +5,21 @@
 
 name: Create and publish a Docker image
 
-
-on: [push]
-
-# on:
-#   push:
-#     branches: [main]
-
-env:
-  REGISTRY: ghcr.io
-  TARGET: ${{ github.repository }}
-  IMAGE: python
-  TAG: 3.8
+on:
+  push:
+    branches: [main]
 
 jobs:
   build-and-push-image:
     runs-on: [self-hosted, linux, x64]
     timeout-minutes: 5
+
+    env:
+      REGISTRY: ghcr.io
+      TARGET: ${{ github.repository }}
+      IMAGE: python
+      TAG: 3.8
+
     permissions:
       contents: read
       packages: write
