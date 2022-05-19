@@ -1,5 +1,5 @@
 #
-# A simple script to run the application
+# A simple script to run the application!
 #
 ##############################################
 
